@@ -106,6 +106,7 @@ C:\Users\hamda\Desktop\AuthProject\obj\Debug\net10.0\AuthProject.AssemblyInfo.cs
 C:\Users\hamda\Desktop\AuthProject\obj\Debug\net10.0\AuthProject.csproj.CoreCompileInputs.cache
 C:\Users\hamda\Desktop\AuthProject\obj\Debug\net10.0\AuthProject.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\hamda\Desktop\AuthProject\obj\Debug\net10.0\AuthProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\hamda\Desktop\AuthProject\obj\Debug\net10.0\AuthProject.sourcelink.json
 C:\Users\hamda\Desktop\AuthProject\obj\Debug\net10.0\rjimswa.dswa.cache.json
 C:\Users\hamda\Desktop\AuthProject\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\Users\hamda\Desktop\AuthProject\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json

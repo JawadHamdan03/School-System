@@ -4,7 +4,7 @@ namespace AuthProject.Models;
 
 
 [PrimaryKey(nameof(StudentId), nameof(TeacherId))]
-class StudentTeacher
+public class StudentTeacher
 {
     public int StudentId { get; set; }
     public int TeacherId { get; set; }
