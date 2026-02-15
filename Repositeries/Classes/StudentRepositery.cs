@@ -1,11 +1,12 @@
 using AuthProject.Data;
 using AuthProject.Models;
+using AuthProject.Repositories.Intefaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace AuthProject.Repositories.Classes;
 
 
-public class StudentRepositery(AppDbContext dbContext)
+public class StudentRepositery(AppDbContext dbContext) : IStudentRepositery
 {
 
     public async Task<List<Student>> getAll() => await dbContext.Students.ToListAsync();
@@ -36,6 +37,7 @@ public class StudentRepositery(AppDbContext dbContext)
         st.Name = student.Name;
         st.DateOfBirth = student.DateOfBirth;
         dbContext.Students.Update(st);
+        await dbContext.SaveChangesAsync();
         return true;
     }
 

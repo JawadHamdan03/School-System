@@ -45,6 +45,22 @@ public class StudentController(StudentRepositery studentRepositery) : Controller
         return Created();
     }
 
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var res = await studentRepositery.Delete(id);
+        if (!res) return BadRequest();
+        return Ok();
+    }
+
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> Update([FromRoute] int id, [FromBody] StudentRequest request)
+    {
+        var st = request.Adapt<Student>();
+        var res = await studentRepositery.Edit(id, st);
+        if (!res) return BadRequest();
+        return Ok();
+    }
 
 
 }
