@@ -1,37 +1,48 @@
 using AuthProject.Data;
+using AuthProject.DTO.Requests;
+using AuthProject.DTO.Responses;
 using AuthProject.Models;
+using AuthProject.Repositories.Classes;
+using Mapster;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AuthProject.Controllers;
 
 
-[Route("api/students")]
+[Route("api/[Controller]")]
 [ApiController]
-public class StudentController(AppDbContext dbContext) : ControllerBase
+public class StudentController(StudentRepositery studentRepositery) : ControllerBase
 {
 
     [HttpGet]
-    public IActionResult GetStudents() => Ok(dbContext.Students.ToList());
+    public async Task<IActionResult> GetStudents()
+    {
+
+        var sts = await studentRepositery.getAll();
+        var res = sts.Adapt<List<StudentResponse>>();
+        return Ok(res);
+    }
 
     [HttpGet("{id:int}")]
-    public IActionResult GetStudentById(int id)
+    public async Task<IActionResult> GetStudentById(int id)
     {
-        var student = dbContext.Students.FirstOrDefault(s => s.Id == id);
-
-        if (student is null)
-            return NotFound();
-
-        return Ok(student);
+        var st = await studentRepositery.GetStudentById(id);
+        if (st is null) return NotFound("The Student does not exist");
+        return Ok(st.Adapt<StudentResponse>());
     }
 
 
     [HttpPost]
-    public IActionResult Add(Student student)
+    public async Task<IActionResult> Add(StudentRequest request)
     {
-        dbContext.Students.Add(student);
-        dbContext.SaveChanges();
-        return CreatedAtAction(nameof(GetStudentById), new { id = student.Id }, student);
+        var st = request.Adapt<Student>();
+        var res = await studentRepositery.AddStudent(st);
+
+        if (!res)
+            BadRequest("data received are not valid");
+
+        return Created();
     }
 
 

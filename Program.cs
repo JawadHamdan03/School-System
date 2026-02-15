@@ -1,4 +1,5 @@
 using AuthProject.Data;
+using AuthProject.Repositories.Classes;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
-
+builder.Services.AddScoped<StudentRepositery>();
 builder.Services.AddControllers();
 var app = builder.Build();
 

@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "cU78mlKpBhM=",
+  "dgSpecHash": "gLsYNqbJWuY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\hamda\\Desktop\\AuthProject\\AuthProject.csproj",
+  "projectFilePath": "C:\\Users\\hamda\\Desktop\\School-System\\AuthProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hamda\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\hamda\\.nuget\\packages\\mapster\\7.4.0\\mapster.7.4.0.nupkg.sha512",
+    "C:\\Users\\hamda\\.nuget\\packages\\mapster.core\\1.2.1\\mapster.core.1.2.1.nupkg.sha512",
     "C:\\Users\\hamda\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.3\\microsoft.aspnetcore.openapi.10.0.3.nupkg.sha512",
     "C:\\Users\\hamda\\.nuget\\packages\\microsoft.build.framework\\18.0.2\\microsoft.build.framework.18.0.2.nupkg.sha512",
     "C:\\Users\\hamda\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.11.0\\microsoft.codeanalysis.analyzers.3.11.0.nupkg.sha512",
